@@ -1,391 +1,303 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alexander Englander - Empreendedor e Sócio e Procurador da IMT Indústria de Material Termoplástico</title>
-  <meta name="description" content="Perfil oficial de Alexander Englander. Empreendedor, Sócio e Procurador da IMT, pioneira em extrusão termoplástica no Brasil, inovação em biocompostos e indústria sustentável. Conheça projetos, imprensa e contato direto.">
-  <meta name="keywords" content="Alexander Englander, IMT, biocompostos, indústria sustentável, extrusão termoplástica, tubos, perfis, mangueiras">
-  <meta name="theme-color" content="#1B5E20" />
-
+  <title>IMT - Alexander Englander</title>
   <style>
     :root{
-      --azul:#4169E1;
-      --verde:#1B5E20;
-      --grad: linear-gradient(90deg,#1B5E20 0%,#4169E1 100%);
-      --text:#0f172a; --muted:#475569; --bg:#ffffff; --bgdark:#0a1b26;
-      --panel:#f3f5f7; --line:#e5e7eb;
+      --bg1:#0c6b4f;
+      --bg2:#0f7ec0;
+      --text:#0b1324;
+      --muted:#5b6b83;
+      --white:#ffffff;
+      --brand:#0c6b4f;
+      --brand-2:#0f7ec0;
+      --chip:#eef4ff;
+      --chip-text:#25457a;
+      --card:#f7f9fc;
+      --shadow: 0 10px 20px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+      --radius: 16px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bgdark);color:#fff}
+    body{
+      margin:0;
+      font-family: system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+      background:#f4f6fb;
+    }
     a{color:inherit;text-decoration:none}
-
-    /* ===== Header / Hero ===== */
-    header{background:var(--grad);color:#fff}
-    .topbar{max-width:1100px;margin:auto;padding:16px 20px;display:flex;align-items:center;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:84px;width:auto;object-fit:contain;image-rendering:auto}
-    .brand-name{font-weight:800;letter-spacing:.02em;font-size:18px}
-
-    nav{margin-left:auto}
-    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap}
-    nav a{display:block;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.10)}
-    nav a:hover{background:rgba(255,255,255,.20)}
-    nav a.active{background:rgba(255,255,255,.28)}
-
-    .hero{max-width:1100px;margin:auto;padding:28px 20px 44px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
-    .hero h1{margin:0 0 6px 0;font-size:42px;line-height:1.08}
-    .hero h2{margin:0 0 16px 0;font-weight:500}
-    .cta{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{background:#16a34a;border:none;color:#fff;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer}
-    .btn.alt{background:transparent;border:2px solid rgba(255,255,255,.35)}
-
-    .hero-card{background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:10px;box-shadow:0 16px 40px rgba(0,0,0,.35)}
+    .container{max-width:1150px;margin:0 auto;padding:0 20px}
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:20;
+      background:linear-gradient(90deg,var(--bg1),var(--bg2));
+      color:var(--white);
+      box-shadow:var(--shadow);
+    }
+    .nav-inner{
+      display:flex;align-items:center;gap:24px;padding:10px 0;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.6px}
+    .brand img{width:34px;height:34px;object-fit:contain}
+    .menu{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+    .menu a{padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:saturate(140%) blur(2px);transition:all .2s ease;font-weight:700}
+      padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.12);
+      transition:all .2s ease;font-weight:600
+    }
+    .menu a:hover{background:rgba(255,255,255,.22);transform:translateY(-1px)}
+    /* HERO */
+    .hero{
+      background:linear-gradient(120deg,var(--bg1),var(--bg2));
+      color:var(--white);
+      padding:64px 0 36px 0;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;
+    }
+    .hero h1{font-size:52px;margin:0 0 10px 0;line-height:1.05}
+    .hero p{font-size:20px;margin:8px 0 18px 0;opacity:.95}
+    .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
+    .btn{background:linear-gradient(90deg,var(--bg1),var(--bg2));color:#fff;border:none;padding:12px 18px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s ease, opacity .15s ease}
+      background:var(--brand);
+      color:#fff;border:none;padding:12px 18px;border-radius:12px;
+      font-weight:700;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s ease, opacity .15s ease
+    }
+    .btn:hover{transform:translateY(-1px);opacity:.95}
+    .btn.sec{background:#fff; color:var(--bg1); border:1px solid #d8e3f3}
+    .hero-card{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.2);
+      padding:12px;border-radius:20px;box-shadow:var(--shadow)
+    }
     .hero-card img{
-      width:100%;height:420px;object-fit:cover;
-      /* foco no rosto (pode ajustar a porcentagem): */
-      object-position:center 18%;
-      border-radius:12px
+      width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;background:#e8edf6;
     }
-
-    /* ===== Main light area ===== */
-    main{background:#fff;color:var(--text)}
-    section{max-width:1100px;margin:auto;padding:46px 20px}
-    section h3{margin:0 0 14px 0;font-size:26px;color:var(--text)}
-
-    .sobre p{margin:0 0 12px 0;color:var(--muted);line-height:1.7}
-
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
-    .card h4{margin:0 0 8px 0}
-    .card p{margin:0;color:#334155}
-
-    .links a{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;color:var(--text)}
-    .links small{display:block;color:#64748b}
-
-    /* ===== Catálogo HTML (sem PDF) ===== */
-    #catalogo{scroll-margin-top:80px}
-    .imtcat-wrap{max-width:1100px;margin:0 auto;padding:46px 20px}
-    .imtcat-head{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:14px}
-    .imtcat-title{margin:0;font-size:26px;color:var(--text)}
-    .imtcat-actions{display:flex;gap:10px;flex-wrap:wrap}
-    .imtcat-input{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;min-width:260px}
-    .imtcat-input input{border:0;outline:0;width:220px;background:transparent;color:var(--text)}
-    .imtcat-filters{display:flex;gap:8px;flex-wrap:wrap}
-    .imtcat-filter{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--text);font-weight:600;cursor:pointer}
-    .imtcat-filter.active,.imtcat-filter:hover{background:var(--grad);color:#fff;border-color:transparent}
-
-    .imtcat-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:10px}
-    .imtcat-card{grid-column:span 4;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,.06);display:flex;flex-direction:column}
-    @media(max-width:1024px){.imtcat-card{grid-column:span 6}}
-    @media(max-width:680px){.imtcat-card{grid-column:span 12}}
-
-    .imtcat-thumb{aspect-ratio:16/9;object-fit:cover;background:#f1f5f9}
-    .imtcat-card-body{padding:14px}
-    .imtcat-badge{display:inline-flex;gap:6px;align-items:center;background:#e6f6ff;color:#0369a1;font-weight:700;padding:6px 10px;border-radius:999px;font-size:12px;margin-bottom:8px}
-    .imtcat-card h4{margin:6px 0 8px 0;font-size:18px;color:var(--text)}
-    .imtcat-card p{margin:0;color:#475569}
-    .imtcat-meta{margin-top:10px;color:#64748b;font-size:13px}
-    .imtcat-actions-row{margin:12px 0 6px 0;display:flex;gap:8px;flex-wrap:wrap}
-    .imtcat-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid #cbd5e1;background:#fff;color:var(--text);text-decoration:none;font-weight:600;cursor:pointer}
-    .imtcat-btn:hover{background:#eef2ff;border-color:#94a3b8}
-    .imtcat-btn--primary{background:var(--grad);color:#fff;border-color:transparent}
-    .imtcat-small{font-size:13px;color:#64748b}
-    .imtcat-empty{padding:28px 16px;text-align:center;color:#64748b;border:1px dashed #cbd5e1;border-radius:14px}
-
-    /* Modal */
-    .imtcat-modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(15,23,42,.55);backdrop-filter:blur(3px);z-index:1000}
-    .imtcat-modal.open{display:grid}
-    .imtcat-modal-box{width:min(880px,94vw);max-height:86vh;overflow:auto;background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(2,6,23,.2)}
-    .imtcat-modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}
-    .imtcat-modal-body{padding:16px}
-    .imtcat-close{background:transparent;border:0;font-size:22px;cursor:pointer;color:#0f172a}
-    .imtcat-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0 0}
-    @media(max-width:640px){.imtcat-specs{grid-template-columns:1fr}}
-
-    /* ===== Contato / Footer ===== */
-    .contato form{display:grid;gap:10px;max-width:640px}
-    .contato input,.contato textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--text);font-size:15px}
-    .contato textarea{min-height:140px;resize:vertical}
-    footer{background:var(--grad);color:#fff}
-    .footer-inner{max-width:1100px;margin:auto;padding:20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
-
-    /* Responsivo */
-    @media (max-width: 980px){
-      .hero{grid-template-columns:1fr;gap:18px}
-      .hero-card img{height:400px;object-position:center 22%}
-      .brand img{height:74px}
+    /* SECTIONS */
+    section{padding:48px 0;border-top: 1px solid #e8eef8}
+    h2{margin:0 0 18px 0;font-size:28px}
+    p.lead{color:#24344d}
+    /* CATALOGO */
+    .catalog-toolbar{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0 18px
     }
-    @media (max-width:560px){
-      .hero-card img{height:360px;object-position:center 26%}
-      .brand img{height:66px}
+    .search{flex:1; min-width:260px; position:relative}
+    .search input{
+      width:100%; padding:12px 14px 12px 14px; border-radius:14px; border:1px solid #d6dfef; outline:none;
+      background:#fff; box-shadow:var(--shadow)
     }
+    .chips{display:flex; gap:10px; flex-wrap:wrap}
+    .chip{
+      padding:10px 14px;border-radius:999px;background:var(--chip);color:var(--chip-text);
+      border:1px solid #d8e3ff;cursor:pointer;font-weight:700;transition:all .2s ease
+    }
+    .chip.active{background:linear-gradient(90deg,var(--bg1),var(--bg2));color:#fff;border-color:transparent}
+    .grid{
+      display:grid;grid-template-columns:repeat(12,1fr);gap:16px
+    }
+    .card{
+      grid-column:span 4; background:#fff; border:1px solid #e5ecf7; border-radius:16px; overflow:hidden; box-shadow:var(--shadow)
+    }
+    @media (max-width: 950px){ .card{grid-column:span 6} .hero-grid{grid-template-columns:1fr} }
+    @media (max-width: 640px){ .card{grid-column:span 12} .hero h1{font-size:36px} }
+    .thumb{background:#e8edf6; width:100%; aspect-ratio:16/9; display:block; overflow:hidden}
+    .thumb img{width:100%;height:100%;object-fit:cover; display:block}
+    .card-body{padding:14px 14px 18px}
+    .kicker{display:inline-flex;gap:8px;align-items:center;font-size:12px;background:#ecfdf5;color:#065f46;padding:6px 10px;border-radius:999px;border:1px solid #c7f0e4}
+    .title{font-size:18px;font-weight:800;margin:10px 0 6px 0}
+    .muted{color:var(--muted);font-size:14px;line-height:1.5}
+    .meta{font-size:12px;color:#3a4a65;margin-top:10px}
+    .actions{display:flex;gap:10px;margin-top:12px}
+    .btn.sm{padding:9px 12px;border-radius:10px;font-weight:800}
+    footer{padding:30px 0 60px;text-align:center;color:#5c6a83}
+    /* image placeholder if path wrong */
+    .img-missing{display:flex;align-items:center;justify-content:center;background:#e8edf6;color:#729; font-weight:700}
   </style>
 </head>
 <body>
-
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="topbar">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
       <div class="brand">
-        <!-- ⚠️ LOGO: usa o arquivo exatamente "Logo IMT.jpg" -->
-        <img src="Logo%20IMT.jpg" alt="Logo IMT">
-        <div class="brand-name">IMT</div>
+        <!-- LOGO: coloque seu arquivo em /logo-IMT.png -->
+        <img src="logo-IMT.png" alt="Logo IMT" onerror="this.replaceWith(makeMissing('Logo IMT'))">
+        <span>IMT</span>
       </div>
-
-      <nav aria-label="Menu principal">
-        <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#imprensa">Imprensa</a></li>
-          <li><a href="#contato">Contato</a></li>
-          <li><a class="active" href="#catalogo">Catálogo</a></li>
-        </ul>
-      </nav>
+      <div class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#imprensa">Imprensa</a>
+        <a href="#contato">Contato</a>
+        <a href="#catalogo"><strong>Catálogo</strong></a>
+      </div>
     </div>
+  </nav>
 
-    <div class="hero">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
       <div>
         <h1>Alexander Englander</h1>
-        <h2>Empreendedor | Sócio e Procurador da IMT | Inovação em Biocompostos e Indústria Sustentável</h2>
+        <p>Empreendedor | Sócio &amp; Procurador da IMT | Inovação em Biocompostos e Indústria Sustentável</p>
         <div class="cta">
-          <a class="btn" href="https://wa.me/5521995200505" target="_blank" rel="noopener">Falar com a equipe</a>
-          <a class="btn alt" href="#catalogo">Ver Catálogo</a>
+          <a class="btn" href="#contato">Falar com a equipe</a>
+          <a class="btn sec" href="#catalogo">Ver Catálogo</a>
         </div>
       </div>
-
       <div class="hero-card">
-        <!-- ⚠️ SUA FOTO: usa o arquivo exatamente abaixo -->
-        <img src="Imagem%20do%20WhatsApp%20de%202025-08-23%20%C3%A0(s)%2019.24.47_7b291320.jpg" alt="Alexander Englander">
+        <!-- FOTO: coloque seu arquivo em /alexander.jpg -->
+        <img src="alexander.jpg" alt="Alexander Englander" onerror="this.replaceWith(makeMissing('Sua foto'))">
       </div>
     </div>
   </header>
 
-  <!-- ===== MAIN ===== -->
-  <main>
-    <!-- Sobre -->
-    <section id="sobre" class="sobre">
-      <h3>Sobre</h3>
-      <p>Alexander Englander é empresário e sócio da IMT Indústria de Material Termoplástico Ltda, companhia com 74 anos de legado no setor plástico e pioneira no desenvolvimento de soluções 100% biodegradáveis e compostáveis.</p>
-      <p>Com formação em Logística (primeiro da turma) e MBAs em Gestão Fiscal & Tributária, Comércio Exterior, Consultoria Contábil e Gestão Financeira e Controladoria, Alexander lidera projetos de inovação que unem tradição industrial com sustentabilidade.</p>
-    </section>
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <h2>Sobre</h2>
+      <p class="lead">
+        Alexander Englander é empresário e sócio da IMT Indústria de Material Termoplástico Ltda, companhia com 74 anos
+        de legado no setor plástico e pioneira no desenvolvimento de soluções 100% biodegradáveis e compostáveis.
+      </p>
+      <p class="lead">
+        Com formação em Logística (primeiro da turma) e MBAs em Gestão Fiscal &amp; Tributária, Comércio Exterior,
+        Consultoria Contábil e Gestão Financeira e Controladoria, Alexander lidera projetos de inovação que unem tradição industrial com sustentabilidade.
+      </p>
+    </div>
+  </section>
 
-    <!-- Projetos & Inovação -->
-    <section id="projetos">
-      <h3>Projetos &amp; Inovação</h3>
-      <div class="cards">
-        <article class="card">
-          <h4>Biocompostos e Tubos Sustentáveis</h4>
-          <p>100% biodegradáveis, certificados, em uso por grandes clientes.</p>
-        </article>
-        <article class="card">
-          <h4>Extrusão Avançada</h4>
-          <p>Know-how de 150+ produtos desenvolvidos em 74 anos de história.</p>
-        </article>
-        <article class="card">
-          <h4>Parcerias Estratégicas</h4>
-          <p>Co-desenvolvimento com multinacionais e institutos de pesquisa.</p>
+  <!-- CATALOGO -->
+  <section id="catalogo">
+    <div class="container">
+      <h2>Catálogo de Produtos</h2>
+
+      <div class="catalog-toolbar">
+        <div class="search">
+          <input id="q" type="search" placeholder="Buscar por nome, material, uso..." oninput="applyFilters()">
+        </div>
+        <div class="chips">
+          <button class="chip active" data-cat="todas" onclick="setCat(this)">Todas</button>
+          <button class="chip" data-cat="biocompostos" onclick="setCat(this)">Biocompostos</button>
+          <button class="chip" data-cat="tubos" onclick="setCat(this)">Tubos</button>
+          <button class="chip" data-cat="mangueiras" onclick="setCat(this)">Mangueiras</button>
+          <button class="chip" data-cat="perfis" onclick="setCat(this)">Perfis</button>
+          <button class="chip" data-cat="nautico" onclick="setCat(this)">Náutico</button>
+          <button class="chip" data-cat="sob-medida" onclick="setCat(this)">Sob Medida</button>
+        </div>
+      </div>
+
+      <div id="cards" class="grid">
+        <!-- CARD 1 -->
+        <article class="card" data-cat="biocompostos" data-text="biocomposto imt bioflex pla pbat pha biodegradavel compostavel extrusao perfis filmes">
+          <a class="thumb" href="#">
+            <!-- IMAGEM: coloque em /prod-bioflex.png -->
+            <img src="prod-bioflex.png" alt="Biocomposto IMT BioFlex" onerror="this.parentElement.classList.add('img-missing'); this.remove();">
+          </a>
+          <div class="card-body">
+            <span class="kicker">🌱 100% Biodegradável</span>
+            <div class="title">Perfil Náutico</div>
+<div class="muted">
+<strong>Perfil Náutico Modelo 1:</strong><br>
+Perfilados plásticos fabricados em PVC, utilizados como acabamento na junção de tecidos, couros, plásticos e lonas. Ideal para bolsas, malas e bancos de automóveis.<br><br>
+<strong>Modelo 1</strong><br>
+Cód: PN-01 &nbsp; Larg: 26 mm &nbsp; Esp: 12,5 mm &nbsp; Furo: 2,0 mm &nbsp; 27,0 g/m<br>
+Cód: PN-02 &nbsp; Larg: 26 mm &nbsp; Esp: 14 mm &nbsp; Furo: 2,3 mm &nbsp; 35,5 g/m<br><br>
+<strong>Perfil Náutico Modelo 2:</strong><br>
+Alças plásticas em diversos modelos e tamanhos, fabricadas em PVC e PEBD, para aplicação em sacolas, bolsas, malas e outros produtos.<br><br>
+<strong>Modelo 2</strong><br>
+Cód: PN-03 &nbsp; Larg: 36 mm &nbsp; Comp: 17,5 m &nbsp; Mat: PVC<br>
+Cód: PN-04 &nbsp; Larg: 36 mm &nbsp; Comp: 20 m &nbsp; Mat: PVC
+</div>
+<div class="meta">Categoria: Náutico</div>
+<div class="actions">
+              <a class="btn sm" href="#perfil">Detalhes</a>
+              <a class="btn sm sec" href="#contato">Solicitar orçamento</a>
+            </div>
+          </div>
         </article>
       </div>
-      <p style="margin-top:10px;color:#334155">Atualmente, está à frente de iniciativas estratégicas para posicionar a IMT como referência em biocompostos na América Latina.</p>
-    </section>
+    </div>
+  </section>
 
-    <!-- Imprensa & Publicações -->
-    <section id="imprensa">
-      <h3>Imprensa &amp; Publicações</h3>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/alexander-englander-977889169/" target="_blank" rel="noopener">
-          Alexander Englander e o futuro dos Biocompostos no Brasil
-          <small>Perfil e artigos no LinkedIn</small>
-        </a>
-        <a href="https://www.instagram.com/englanderalex?igsh=cjBvbmt1dW5tYnRk" target="_blank" rel="noopener">
-          Instagram Alexander Englander
-          <small>@englanderalex</small>
-        </a>
-        <a href="https://www.instagram.com/imt.termoplastico?utm_source=ig_web_button_share_sheet&igsh=NmllcmdzZWZzZWNy" target="_blank" rel="noopener">
-          Instagram IMT
-          <small>@imt.termoplastico</small>
-        </a>
-        <a href="#" onclick="alert('Parcerias: Aruatech, Bob’s, Menzani, Oceaneering, Vusal Tech, entre outras.');return false;">
-          Parcerias &amp; Clientes
-          <small>Aruatech, Bob’s, Menzani, Oceaneering, Vusal Tech…</small>
-        </a>
-      </div>
-    </section>
+  <!-- OUTRAS SEÇÕES SIMPLIFICADAS -->
+  <section id="projetos"><div class="container"><h2>Projetos &amp; Inovação</h2><p class="lead">I+D contínuo em biocompostos, reciclagem avançada e soluções sob medida para diversos setores.</p></div></section>
+  <section id="imprensa"><div class="container"><h2>Imprensa</h2><p class="lead">Releases e menções na mídia sobre a IMT e seus projetos sustentáveis.</p></div></section>
+  
+  <section id="contato">
+    <div class="container">
+      <h2>Contato</h2>
+      <div class="grid" style="align-items:start">
+        <div class="card" style="grid-column:span 6">
+          <div class="card-body">
+            <div class="title" style="font-size:22px">Informações de Contato</div>
+            <div class="muted">
+              <p><strong>Endereço:</strong><br>
+              Rua Teixeira Ribeiro, 308<br>
+              Ramos - CEP: 21.040-240<br>
+              Rio de Janeiro</p>
 
-    <!-- ===== NOVO: Catálogo em HTML (sem PDF) ===== -->
-    <section id="catalogo" aria-label="Catálogo de produtos IMT">
-      <div class="imtcat-wrap">
-        <div class="imtcat-head">
-          <h3 class="imtcat-title">Catálogo de Produtos</h3>
+              <p><strong>Telefone/Fax:</strong><br>
+              (21) 98297-7376</p>
 
-          <div class="imtcat-actions">
-            <label class="imtcat-input" aria-label="Buscar produto">
-              🔎 <input id="imtcat-q" type="search" placeholder="Buscar por nome, material, uso…">
-            </label>
-            <div class="imtcat-filters" role="tablist" aria-label="Filtro por categoria">
-              <button class="imtcat-filter active" data-cat="todas">Todas</button>
-              <button class="imtcat-filter" data-cat="Biocompostos">Biocompostos</button>
-              <button class="imtcat-filter" data-cat="Tubos">Tubos</button>
-              <button class="imtcat-filter" data-cat="Mangueiras">Mangueiras</button>
-              <button class="imtcat-filter" data-cat="Perfis">Perfis</button>
-              <button class="imtcat-filter" data-cat="Náutico">Náutico</button>
-              <button class="imtcat-filter" data-cat="Sob Medida">Sob Medida</button>
+              <p><strong>E-mail:</strong><br>
+              comercial@imt-industria.store</p>
+
+              <p><strong>CNPJ:</strong><br>
+              50.014.231/0001-22</p>
+            </div>
+
+            <div class="title" style="font-size:18px;margin-top:18px">Horário de Atendimento</div>
+            <div class="muted">
+              <p>Segunda a Sexta: 08:00 - 18:00<br>
+              Sábado: 08:00 - 12:00</p>
             </div>
           </div>
         </div>
 
-        <div id="imtcat-grid" class="imtcat-grid" role="list"></div>
-        <div id="imtcat-empty" class="imtcat-empty" style="display:none">Nada encontrado para esse termo/filtro.</div>
-      </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="contato">
-      <h3>Contato Direto</h3>
-      <p><a class="btn" href="https://wa.me/5521995200505" target="_blank" rel="noopener">Falar com a equipe (WhatsApp)</a></p>
-
-      <!-- Formulário com mailto para seu e-mail -->
-      <form action="mailto:alexandersenglander@uol.com.br" method="post" enctype="text/plain">
-        <input type="text" name="Nome" placeholder="Nome" required>
-        <input type="email" name="Email" placeholder="E-mail" required>
-        <input type="text" name="Empresa" placeholder="Empresa (opcional)">
-        <textarea name="Mensagem" rows="5" placeholder="Mensagem" required></textarea>
-        <button class="btn" type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="footer-inner">
-      <small>© 2025 Alexander Englander | Todos os direitos reservados.</small>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="privacidade.html">Política de Privacidade</a>
-        <a href="https://www.linkedin.com/in/alexander-englander-977889169/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com/imt.termoplastico?utm_source=ig_web_button_share_sheet&igsh=NmllcmdzZWZzZWNy" target="_blank" rel="noopener">Instagram IMT</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ===== Catálogo – JS ===== -->
-  <script>
-    const IMTCAT_WA = "https://wa.me/5521995200505?text=Olá,%20vi%20o%20produto%20__PROD__%20no%20site%20e%20gostaria%20de%20mais%20informações.";
-
-    const IMTCAT_PRODUTOS = [
-      { id:"bio-01", nome:"Biocomposto IMT BioFlex", categoria:"Biocompostos", selo:"100% Biodegradável",
-        desc:"Compostos à base de PLA/PBAT/PHAs para extrusão de perfis e filmes. Alta processabilidade e acabamento premium.",
-        specs:["Cores personalizadas","Compostável (EN 13432)","Aplicações: sacolas, filmes e perfis leves"],
-        img:"" },
-      { id:"tubo-pp-01", nome:"Tubo Técnico PP/PEAD", categoria:"Tubos", selo:"Industrial",
-        desc:"Tubos extrudados em PP ou PEAD com resistência química e mecânica. Indicado para condução e proteção.",
-        specs:["Diâmetros 6–110 mm","Paredes finas ou reforçadas","Normas sob demanda"],
-        img:"" },
-      { id:"mang-01", nome:"Mangueira Flexível TPE", categoria:"Mangueiras", selo:"Alimentício opcional",
-        desc:"Mangueiras em TPE com ótima flexibilidade e boa resistência a óleos leves.",
-        specs:["Ø interno 4–50 mm","Transparente/Colorida","Atóxico sob demanda"],
-        img:"" },
-      { id:"perfil-01", nome:"Perfil Técnico Rígido", categoria:"Perfis", selo:"Sob projeto",
-        desc:"Perfis em PVC/PP/ABS/PC para guias, acabamentos e vedações. Produção a partir de desenho ou amostra.",
-        specs:["Comprimentos até 6 m","Ferramental sob encomenda","Baixa deformação"],
-        img:"" },
-      { id:"nautico-01", nome:"Defensa Náutica & Acabamentos", categoria:"Náutico", selo:"Uso náutico",
-        desc:"Perfis para embarcações: defensas, cantoneiras e guarnições. Resistência UV e à água salgada.",
-        specs:["Várias bitolas","Cores padrão: branco/preto","Aditivos UV"],
-        img:"" },
-      { id:"sobmedida-01", nome:"Extrusão Sob Medida", categoria:"Sob Medida", selo:"Projeto IMT",
-        desc:"Desenvolvimento completo: material, ferramental e processo conforme sua necessidade.",
-        specs:["Estudo de material","Protótipo rápido","Escalonamento industrial"],
-        img:"" },
-    ];
-
-    const imtGrid  = document.getElementById('imtcat-grid');
-    const imtEmpty = document.getElementById('imtcat-empty');
-    const imtQ     = document.getElementById('imtcat-q');
-    let IMTCAT_CAT = 'todas', IMTCAT_TERM = '';
-
-    const badge = (t)=> `<span class="imtcat-badge">🌱 ${t}</span>`;
-
-    function card(p){
-      const foto = p.img ? `<img src="${p.img}" alt="${p.nome}" class="imtcat-thumb">`
-                         : `<img alt="" class="imtcat-thumb" style="background:#f1f5f9">`;
-      return `<article class="imtcat-card" role="listitem">
-        ${foto}
-        <div class="imtcat-card-body">
-          ${p.selo ? badge(p.selo) : ""}
-          <h4>${p.nome}</h4>
-          <p>${p.desc}</p>
-          <div class="imtcat-meta imtcat-small">Categoria: ${p.categoria}</div>
-          <div class="imtcat-actions-row">
-            <button class="imtcat-btn imtcat-btn--primary" onclick="ver('${p.id}')">Detalhes</button>
-            <a class="imtcat-btn" target="_blank" href="${IMTCAT_WA.replace('__PROD__', encodeURIComponent(p.nome))}">Solicitar orçamento</a>
+        <div class="card" style="grid-column:span 6">
+          <div class="card-body">
+            <div class="title" style="font-size:22px">Localização</div>
+            <div class="thumb" style="margin-bottom:10px">
+              <img src="contact-map.png" alt="Mapa - Localização IMT" onerror="this.parentElement.classList.add('img-missing'); this.remove();">
+            </div>
+            <div class="title" style="font-size:22px">Solicite um Orçamento</div>
+            <div class="muted">
+              <p>Entre em contato conosco para solicitar um orçamento personalizado para seus projetos. Nossa equipe está pronta para atendê-lo com as melhores soluções em materiais termoplásticos.</p>
+              <p>📞 Ligue para (21) 98297-7376<br>
+                 ✉️ Envie um e-mail para comercial@imt-industria.store</p>
+            </div>
           </div>
         </div>
-      </article>`;
-    }
-
-    function filtrar(){
-      const lista = IMTCAT_PRODUTOS.filter(p=>{
-        const catOk = (IMTCAT_CAT==='todas' || p.categoria===IMTCAT_CAT);
-        const t = (p.nome+' '+p.desc+' '+(p.tags||[]).join(' ')).toLowerCase();
-        const q = IMTCAT_TERM.toLowerCase().trim();
-        const txtOk = !q || t.includes(q);
-        return catOk && txtOk;
-      });
-      imtGrid.innerHTML = lista.map(card).join('');
-      imtEmpty.style.display = lista.length ? 'none' : 'block';
-    }
-
-    document.querySelectorAll('.imtcat-filter').forEach(b=>{
-      b.addEventListener('click', ()=>{
-        document.querySelectorAll('.imtcat-filter').forEach(x=>x.classList.remove('active'));
-        b.classList.add('active');
-        IMTCAT_CAT = b.dataset.cat;
-        filtrar();
-      });
-    });
-    imtQ.addEventListener('input', e=>{ IMTCAT_TERM = e.target.value; filtrar(); });
-
-    /* Modal */
-    const modal = document.getElementById('imtcat-modal');
-    const mt = document.getElementById('imtcat-m-title');
-    const mc = document.getElementById('imtcat-m-content');
-
-    function ver(id){
-      const p = IMTCAT_PRODUTOS.find(x=>x.id===id);
-      if(!p) return;
-      mt.textContent = p.nome;
-      mc.innerHTML = `
-        ${p.img ? `<img src="${p.img}" alt="${p.nome}" style="width:100%;max-height:300px;object-fit:cover;border-radius:12px">`:""}
-        ${p.selo ? `<div style="margin-top:10px">${badge(p.selo)}</div>`:""}
-        <p style="margin:12px 0">${p.desc}</p>
-        <h4 style="margin:10px 0 6px 0">Especificações</h4>
-        ${(p.specs&&p.specs.length) ? `<ul class="imtcat-specs">${p.specs.map(s=>`<li>• ${s}</li>`).join('')}</ul>` : `<p class="imtcat-small">Consulte a IMT para especificação completa.</p>`}
-        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
-          <a class="imtcat-btn imtcat-btn--primary" target="_blank" href="${IMTCAT_WA.replace('__PROD__', encodeURIComponent(p.nome))}">Falar no WhatsApp</a>
-          <a class="imtcat-btn" href="#contato">Formulário de contato</a>
-        </div>
-      `;
-      openM();
-    }
-    function openM(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
-    function imtcatClose(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
-    modal.addEventListener('click', e=>{ if(e.target===modal) imtcatClose(); });
-
-    /* inicializa */
-    filtrar();
-  </script>
-
-  <!-- Modal (fora do fluxo) -->
-  <div id="imtcat-modal" class="imtcat-modal" aria-hidden="true" aria-label="Detalhes do produto">
-    <div class="imtcat-modal-box" role="dialog" aria-modal="true">
-      <div class="imtcat-modal-head">
-        <h3 id="imtcat-m-title">Produto</h3>
-        <button class="imtcat-close" aria-label="Fechar" onclick="imtcatClose()">✕</button>
       </div>
-      <div class="imtcat-modal-body" id="imtcat-m-content"></div>
     </div>
-  </div>
+  </section>
 
+
+  <footer>
+    <div class="container">© IMT Indústria de Material Termoplástico Ltda. — Todos os direitos reservados.</div>
+  </footer>
+
+  <script>
+    // helper placeholder if image missing
+    function makeMissing(txt){
+      const d=document.createElement('div'); d.className='img-missing'; d.style.width='160px'; d.style.height='34px'; d.style.borderRadius='8px'; d.textContent=txt; return d;
+    }
+    let currentCat = 'todas';
+    function setCat(btn){
+      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+      btn.classList.add('active');
+      currentCat = btn.dataset.cat;
+      applyFilters();
+    }
+    function applyFilters(){
+      const q = (document.getElementById('q').value || '').toLowerCase();
+      document.querySelectorAll('#cards .card').forEach(card=>{
+        const inCat = (currentCat==='todas') || card.dataset.cat===currentCat;
+        const inTxt = card.dataset.text.includes(q);
+        card.style.display = (inCat && inTxt) ? '' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>
